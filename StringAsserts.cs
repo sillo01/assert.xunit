@@ -305,6 +305,17 @@ namespace Xunit
 						expectedIndex = SkipWhitespace(expected, expectedIndex);
 						actualIndex = SkipWhitespace(actual, actualIndex);
 					}
+					else if (ignoreAllWhiteSpace && (IsWhiteSpace(expectedChar) || IsWhiteSpace(actualChar)))
+					{
+						if (IsWhiteSpace(expectedChar))
+						{
+							SkipWhitespace(expected, expectedIndex);
+						}
+						if (IsWhiteSpace(actualChar))
+						{
+							SkipWhitespace(actual, actualIndex);
+						}
+					}
 					else
 					{
 						if (ignoreCase)
