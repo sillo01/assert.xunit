@@ -242,6 +242,7 @@ namespace Xunit
 		/// <param name="ignoreCase">If set to <c>true</c>, ignores cases differences. The invariant culture is used.</param>
 		/// <param name="ignoreLineEndingDifferences">If set to <c>true</c>, treats \r\n, \r, and \n as equivalent.</param>
 		/// <param name="ignoreWhiteSpaceDifferences">If set to <c>true</c>, treats spaces and tabs (in any non-zero quantity) as equivalent.</param>
+		/// <param name="ignoreAllWhiteSpace">If set to <c>true</c>, treats spaces and tabs as empty strings equivalents.</param>
 		/// <exception cref="EqualException">Thrown when the strings are not equivalent.</exception>
 #if XUNIT_NULLABLE
 		public static void Equal(
@@ -249,14 +250,16 @@ namespace Xunit
 			string? actual,
 			bool ignoreCase = false,
 			bool ignoreLineEndingDifferences = false,
-			bool ignoreWhiteSpaceDifferences = false)
+			bool ignoreWhiteSpaceDifferences = false,
+			bool ignoreAllWhiteSpace = false)
 #else
 		public static void Equal(
 			string expected,
 			string actual,
 			bool ignoreCase = false,
 			bool ignoreLineEndingDifferences = false,
-			bool ignoreWhiteSpaceDifferences = false)
+			bool ignoreWhiteSpaceDifferences = false,
+			bool ignoreAllWhiteSpace = false)
 #endif
 		{
 #if XUNIT_SPAN
